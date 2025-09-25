@@ -1,52 +1,38 @@
-const weeks = [
-  ["29", "30", "31", "1", "2", "3", "4"],
-  ["5", "6", "7", "8", "9", "10", "11"],
-  ["12", "13", "14", "15", "16", "17", "18"],
-];
+import React from "react";
+import { calendarData } from "../data/events";
 
-const events = {
-  "30": "Jitiya Parwa",
-  "1": "Bishwakarma Pooja",
-  "2": "Pharping Yatra",
-  "3": "Constitution Day",
-  "4": "Tourism Day",
-  "6": "Ghatasthapana",
-  "8": "Today",
-  "9": "Pharmacists Day",
-  "10": "Weapons Day",
-};
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-export default function CalendarGrid() {
+const CalendarGrid = () => {
   return (
-    <div className="w-full border border-gray-200 rounded overflow-hidden">
-      <div className="grid grid-cols-7 bg-gray-100 text-center text-sm font-semibold">
-        {weekdays.map((day, i) => (
-          <div key={i} className="py-2 border-r last:border-none">
-            {day}
-          </div>
+    <div className="p-4">
+      <div className="grid grid-cols-7 border-b text-center font-semibold text-gray-700">
+        {days.map((day) => (
+          <div key={day} className="py-2 border">{day}</div>
         ))}
       </div>
+      <div className="grid grid-cols-7 text-sm">
+        {[...Array(30)].map((_, idx) => {
+          const data = calendarData.find((d) => d.day === idx + 1);
 
-      {weeks.map((week, i) => (
-        <div key={i} className="grid grid-cols-7 text-sm text-center">
-          {week.map((day, j) => {
-            const isToday = day === "8";
-            return (
-              <div
-                key={j}
-                className={`border border-gray-200 p-2 h-24 flex flex-col justify-between items-center ${
-                  isToday ? "bg-orange-500 text-white font-bold" : "bg-white"
-                }`}
-              >
-                <div>{day}</div>
-                <div className="text-xs">{events[day]}</div>
-              </div>
-            );
-          })}
-        </div>
-      ))}
+          return (
+            <div
+              key={idx}
+              className={`min-h-[100px] p-2 border text-left space-y-1 ${
+                data?.highlight ? "bg-green-800 text-white " : ""
+              }`}
+            >
+              <div className="text-lg font-bold">{idx + 1}</div>
+              {data?.tithi && <div className="text-xs italic text-white">{data.tithi}</div>}
+              {data?.events?.map((event, i) => (
+                <div key={i} className="text-xs">{event}</div>
+              ))}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
-}
+};
+
+export default CalendarGrid;

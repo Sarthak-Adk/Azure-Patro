@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
+import ExchangeRatesTable from "../components/ExchangeRateTable";
 
 export default function Layout() {
   return (
@@ -8,9 +9,13 @@ export default function Layout() {
       <Header />
       <div className="flex flex-col lg:flex-row mt-2 px-[100px]">
         <Sidebar />
-        <main className="flex-1  mt-2 px-[100px]">
+        <main className="flex-1  mt-2 ">
         <Outlet/>
         </main>
+        <div className="bg-white">      
+            <ExchangeRatesTable/>
+            </div>
+
       </div>
     </div>
   );

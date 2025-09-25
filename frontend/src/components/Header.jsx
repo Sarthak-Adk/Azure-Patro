@@ -14,8 +14,13 @@ export default function Header() {
   { name: "More", path: "/more" },
 ];
 
+const now = new Date();
+
+  const date = now.toLocaleDateString(); // e.g. 9/24/2025
+  const time = now.toLocaleTimeString(); // e.g. 7:45:10 PM
 
   return (
+     <>
     <header className="">
        <div className="bg-red-700 text-white flex justify-between items-center  py-2 text-sm px-[100px]">
         <div className="flex gap-4">
@@ -29,8 +34,8 @@ export default function Header() {
           <FaGlobe />
         </div>
       </div>
-    <div className="bg-white text-red-600 py-3 px-[100px] flex justify-between items-center shadow-[0px_3px_5px_gray]">
-      <h1 className="text-xl font-bold">Azure.Patro</h1>
+    <div className="bg-white text-red-600 py-3 px-[100px] flex justify-between items-center ">
+      <NavLink to="/"><h1 className="text-xl font-bold">Azure.Patro</h1> </NavLink>
      <nav className="hidden lg:flex gap-4 font-medium">
   {links.map((link, i) => (
     <NavLink
@@ -48,5 +53,21 @@ export default function Header() {
       <div className="text-xs">🔒 Log In</div>
       </div>
     </header>
+    <section className="banner">
+<div className="w-full h-[200px] bg-red-600 px-[100px] flex items-center gap-12 text-white text-xl">
+<div>
+  <h2>9 Ashoj 8082, Thursday </h2>
+  <p>असोज शुक्ल तृतिया</p>
+  <p>पञ्चाङ्ग: एन्द्र तैतल चित्रा</p>
+  <p>Current Time:{time}</p>
+  <p>Current Date:{date}</p>
+</div>
+<div className="bg-white h-[150px] w-[700px]">
+
+</div>
+</div>
+
+    </section>
+   </>
   );
 }
