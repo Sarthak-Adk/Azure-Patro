@@ -2,21 +2,26 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import ExchangeRatesTable from "../components/ExchangeRateTable";
+import GoldSilverRates from "../components/GoldSilverRates";
+import Footer from "../components/Footer";
 
 export default function Layout() {
   return (
     <div className="bg-gray-100 min-h-screen font-sans">
       <Header />
-      <div className="flex flex-col lg:flex-row mt-2 px-[100px]">
+      <div className="flex flex-col lg:flex-row mt-2 px-[77px]">
         <Sidebar />
         <main className="flex-1  mt-2 ">
         <Outlet/>
         </main>
+        
         <div className="bg-white">      
             <ExchangeRatesTable/>
+            <GoldSilverRates/>
             </div>
 
       </div>
+      <Footer/>
     </div>
   );
 }

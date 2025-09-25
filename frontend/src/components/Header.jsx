@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 import { FaFacebookF, FaInstagram, FaLinkedin, FaGlobe } from "react-icons/fa";
+import headerbanner from "../assets/headerbanner.png";
 
 export default function Header() {
   const links = [
@@ -22,7 +23,10 @@ const now = new Date();
   return (
      <>
     <header className="">
-       <div className="bg-red-700 text-white flex justify-between items-center  py-2 text-sm px-[100px]">
+       <div className=" text-white flex justify-between items-center  py-2 text-sm px-[100px]"
+       style={{background: "linear-gradient(90deg,rgba(204, 37, 37, 1) 16%, rgba(212, 77, 19, 1) 53%, rgba(222, 116, 35, 1) 88%)",
+       }}
+       >
         <div className="flex gap-4">
           <span className="cursor-pointer">Contact</span>
           <span className="cursor-pointer">Subscription</span>
@@ -54,7 +58,13 @@ const now = new Date();
       </div>
     </header>
     <section className="banner">
-<div className="w-full h-[200px] bg-red-600 px-[100px] flex items-center gap-12 text-white text-xl">
+<div
+  className="w-full h-[200px] px-[100px] flex items-center gap-12 text-white text-xl"
+  style={{
+background: "linear-gradient(90deg,rgba(204, 37, 37, 1) 16%, rgba(212, 77, 19, 1) 53%, rgba(222, 116, 35, 1) 88%)",
+  }}
+>
+
 <div>
   <h2>9 Ashoj 8082, Thursday </h2>
   <p>असोज शुक्ल तृतिया</p>
@@ -62,8 +72,8 @@ const now = new Date();
   <p>Current Time:{time}</p>
   <p>Current Date:{date}</p>
 </div>
-<div className="bg-white h-[150px] w-[700px]">
-
+<div className="h-[150px] w-[900px]">
+  <img src={headerbanner} alt="headerbanner" className="h-full w-full object-cover"/>
 </div>
 </div>
 

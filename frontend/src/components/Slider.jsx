@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 import slider_bg from "../assets/slider_bg.jpg";
 import slider_bg1 from "../assets/slider_bg1.jpg";
 import slider_bg2 from "../assets/slider_bg2.jpg";
@@ -36,18 +38,18 @@ const Slider = () => {
 
       {/* Left Button */}
       <button
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 text-white p-4 rounded-full"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer text-2xl bg-white bg-opacity-50 text-black p-4 rounded-full"
         onClick={handlePrev}
       >
-        ◀
+        <IoIosArrowBack />
       </button>
 
       {/* Right Button */}
       <button
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 text-white p-4 rounded-full"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer text-2xl bg-white bg-opacity-50 text-black p-4 rounded-full"
         onClick={handleNext}
       >
-        ▶
+        <IoIosArrowForward />
       </button>
     </div>
   );
