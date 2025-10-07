@@ -29,11 +29,11 @@ const Slider = () => {
   };
 
   return (
-    <div className="relative w-auto h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px] overflow-hidden">
+    <div className="relative w-auto h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px] overflow-hidden rounded-2xl">
       <img
         src={SilderImg[currentIndex]}
         alt="Slider"
-        className="w-full h-full object-cover object-center transition-all duration-500 ease-in-out"
+        className="w-full h-full  transition-all duration-500 ease-in-out"
       />
 
       {/* Left Button */}

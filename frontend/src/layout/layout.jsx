@@ -9,16 +9,16 @@ export default function Layout() {
   return (
     <div className="bg-gray-100 min-h-screen font-sans">
       <Header />
-      <div className="flex flex-col lg:flex-row mt-2 px-[77px]">
+      <div className="flex flex-col lg:flex-row mt-2  px-[77px]">
         <Sidebar />
-        <main className="flex-1  mt-2 ">
+        <main className="flex-1   ">
         <Outlet/>
         </main>
         
-        <div className="bg-white">      
+        {/* <div className="bg-white">      
             <ExchangeRatesTable/>
             <GoldSilverRates/>
-            </div>
+            </div> */}
 
       </div>
       <Footer/>

@@ -1,10 +1,10 @@
 import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-
+import {Link} from "react-router-dom"
 const Footer = () => {
   return (
-    <footer className=" border-t border-gray-200 mt-4 text-gray-800 text-white"
+    <footer className=" border-t border-gray-200 mt-4  text-white"
         style={{background: "linear-gradient(90deg,rgba(204, 37, 37, 1) 16%, rgba(212, 77, 19, 1) 53%, rgba(222, 116, 35, 1) 88%)",
        }}>
       <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-5 gap-8 text-sm">
@@ -41,14 +41,14 @@ const Footer = () => {
         <div>
           <h3 className="font-bold mb-3">सेवाहरू<br />SERVICES</h3>
           <ul className="space-y-1">
-            <li>Calendar</li>
-            <li>Horoscope</li>
-            <li>Blogs</li>
-            <li>Paramarsha</li>
-            <li>News</li>
-            <li>Suva Sait</li>
-            <li>Government Holidays</li>
-            <li>Subscription</li>
+            <Link to=""><li>Calendar</li></Link>
+           <Link to="" ><li>Horoscope</li></Link>
+           <Link to=""><li>Blogs</li></Link>
+           <Link to=""><li>Paramarsha</li></Link>
+           <Link to=""><li>News</li></Link>
+           <Link to=""><li>Suva Sait</li></Link>
+           <Link to=""><li>Government Holidays</li></Link>
+           <Link to=""><li>Subscription</li></Link>
           </ul>
         </div>
 
@@ -56,11 +56,11 @@ const Footer = () => {
         <div>
           <h3 className="font-bold mb-3 ">अजुर पात्रो<br />Azure.Patro</h3>
           <ul className="space-y-1">
-            <li>About Us</li>
-            <li>Apps</li>
-            <li>Contact</li>
-            <li>Feedback and Suggestions</li>
-            <li>Close Account</li>
+          <Link to=""><li>About Us</li></Link>
+          <Link to=""><li>Apps</li></Link>
+          <Link to=""><li>Contact</li></Link>
+          <Link to=""><li>Feedback and Suggestions</li></Link>
+          <Link to=""><li>Close Account</li></Link>
           </ul>
 
           <h3 className="font-bold mt-4">SALES & SUPPORT</h3>
@@ -72,11 +72,11 @@ const Footer = () => {
         <div>
           <h3 className="font-bold mb-3">युटिलिटिज<br />UTILITIES</h3>
           <ul className="space-y-1">
-            <li>Mac Statusbar App</li>
-            <li>Web Widget</li>
-            <li>Date Converter</li>
-            <li>Gold & Silver</li>
-            <li>Forex</li>
+           <Link to=""> <li>Mac Statusbar App</li></Link>
+             <Link to=""> <li>Web Widget</li></Link>
+             <Link to=""> <li>Date Converter</li></Link>
+             <Link to=""> <li>Gold & Silver</li></Link>
+             <Link to=""> <li>Forex</li></Link>
           </ul>
         </div>
       </div>

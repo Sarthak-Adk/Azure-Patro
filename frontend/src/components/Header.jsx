@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import { FaFacebookF, FaInstagram, FaLinkedin, FaGlobe } from "react-icons/fa";
 import headerbanner from "../assets/headerbanner.png";
+import logo from "../assets/logo.png";
 
 export default function Header() {
   const links = [
@@ -23,7 +24,8 @@ const now = new Date();
   return (
      <>
     <header className="">
-       <div className=" text-white flex justify-between items-center  py-2 text-sm px-[100px]"
+       <div className=" text-white flex justify-between items-center   py-2 
+ px-[100px]"
        style={{background: "linear-gradient(90deg,rgba(204, 37, 37, 1) 16%, rgba(212, 77, 19, 1) 53%, rgba(222, 116, 35, 1) 88%)",
        }}
        >
@@ -39,14 +41,14 @@ const now = new Date();
         </div>
       </div>
     <div className="bg-white text-red-600 py-3 px-[100px] flex justify-between items-center ">
-      <NavLink to="/"><h1 className="text-xl font-bold">Azure.Patro</h1> </NavLink>
-     <nav className="hidden lg:flex gap-4 font-medium">
+      <NavLink to="/"><img className="h-13 w-[142px]" src={logo} alt="" /></NavLink>
+     <nav className="hidden lg:flex gap-4 mukta-regular">
   {links.map((link, i) => (
     <NavLink
       key={i}
       to={link.path}
       className={({ isActive }) =>
-        `hover:underline ${isActive ? "text-black font-bold" : ""}`
+        `hover:underline  ${isActive ? "text-black font-bold" : ""}`
       }
     >
       {link.name}
@@ -57,7 +59,7 @@ const now = new Date();
       <div className="text-xs">🔒 Log In</div>
       </div>
     </header>
-    <section className="banner">
+    {/* <section className="banner">
 <div
   className="w-full h-[200px] px-[100px] flex items-center gap-12 text-white text-xl"
   style={{
@@ -77,7 +79,7 @@ background: "linear-gradient(90deg,rgba(204, 37, 37, 1) 16%, rgba(212, 77, 19, 1
 </div>
 </div>
 
-    </section>
+    </section> */}
    </>
   );
 }
