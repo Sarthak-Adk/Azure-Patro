@@ -5,13 +5,13 @@ import {Link} from "react-router-dom"
 const Footer = () => {
   return (
     <footer className=" border-t border-gray-200 mt-4  text-white"
-        style={{background: "linear-gradient(90deg,rgba(204, 37, 37, 1) 16%, rgba(212, 77, 19, 1) 53%, rgba(222, 116, 35, 1) 88%)",
+        style={{background: "linear-gradient(90deg,rgba(229, 45, 73, 1) 30%, rgba(245, 82, 93, 1) 61%, rgba(251, 95, 102, 1) 88%)",
        }}>
-      <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-5 gap-8 text-sm">
+      <div className=" mx-[75px]  py-10 grid grid-cols-2 md:grid-cols-5 gap-10 text-sm">
         
         {/* Nepali Calendar */}
         <div>
-          <h3 className="font-bold mb-3">Azure.Patro २०८२<br />NEPALI CALENDAR 2082</h3>
+          <h3 className="font-bold mb-3">Patro २०८२<br />NEPALI CALENDAR 2082</h3>
           <ul className="space-y-1">
             {[
               "बैशाख - Baisakh","जेठ - Jestha","असार - Ashar","साउन - Shrawan",
@@ -54,7 +54,7 @@ const Footer = () => {
 
         {/* Nepali Patro */}
         <div>
-          <h3 className="font-bold mb-3 ">अजुर पात्रो<br />Azure.Patro</h3>
+          <h3 className="font-bold mb-3 ">पात्रो<br />Patro</h3>
           <ul className="space-y-1">
           <Link to=""><li>About Us</li></Link>
           <Link to=""><li>Apps</li></Link>
@@ -90,7 +90,7 @@ const Footer = () => {
             <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store" className="h-10"/>
           </div>
         </div>
-        <p className="mt-4">Copyright © 2025 Azure Patro - अजुर पात्रो. All Rights Reserved</p>
+        <p className="mt-4">Copyright © 2025 Patro - पात्रो. All Rights Reserved</p>
       </div>
     </footer>
   );

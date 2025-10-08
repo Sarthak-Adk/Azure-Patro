@@ -26,8 +26,7 @@ const now = new Date();
     <header className="">
        <div className=" text-white flex justify-between items-center   py-2 
  px-[100px]"
-       style={{background: "linear-gradient(90deg,rgba(204, 37, 37, 1) 16%, rgba(212, 77, 19, 1) 53%, rgba(222, 116, 35, 1) 88%)",
-       }}
+       style={{background: "linear-gradient(90deg,rgba(229, 45, 73, 1) 30%, rgba(245, 82, 93, 1) 61%, rgba(251, 95, 102, 1) 88%)" }}
        >
         <div className="flex gap-4">
           <span className="cursor-pointer">Contact</span>
@@ -40,15 +39,15 @@ const now = new Date();
           <FaGlobe />
         </div>
       </div>
-    <div className="bg-white text-red-600 py-3 px-[100px] flex justify-between items-center ">
-      <NavLink to="/"><img className="h-13 w-[142px]" src={logo} alt="" /></NavLink>
+    <div className="bg-white text-gray-800 font-semibold py-3 px-[100px] flex justify-between items-center ">
+      <NavLink to="/"><img className="h-12 w-[142px]" src={logo} alt="" /></NavLink>
      <nav className="hidden lg:flex gap-4 mukta-regular">
   {links.map((link, i) => (
     <NavLink
       key={i}
       to={link.path}
       className={({ isActive }) =>
-        `hover:underline  ${isActive ? "text-black font-bold" : ""}`
+        ` ${isActive ? "text-white font-bold bg-[#E52D49] rounded-3xl p-1" : ""}`
       }
     >
       {link.name}

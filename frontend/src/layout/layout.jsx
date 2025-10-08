@@ -4,6 +4,7 @@ import Sidebar from "../components/Sidebar";
 import ExchangeRatesTable from "../components/ExchangeRateTable";
 import GoldSilverRates from "../components/GoldSilverRates";
 import Footer from "../components/Footer";
+import RashifalCard from "../components/RashifalCard";
 
 export default function Layout() {
   return (
@@ -21,6 +22,7 @@ export default function Layout() {
             </div> */}
 
       </div>
+      <RashifalCard/>
       <Footer/>
     </div>
   );

@@ -7,7 +7,7 @@ export default defineConfig({
   theme:{
     extend: {
      fontFamily: {
-        sans: ['Mukta', 'sans-serif'],
+        sans: ['poppins', 'sans-serif'],
       },
     },
   },
