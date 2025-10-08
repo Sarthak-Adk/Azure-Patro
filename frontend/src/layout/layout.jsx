@@ -5,6 +5,7 @@ import ExchangeRatesTable from "../components/ExchangeRateTable";
 import GoldSilverRates from "../components/GoldSilverRates";
 import Footer from "../components/Footer";
 import RashifalCard from "../components/RashifalCard";
+import Services from "../components/Services";
 
 export default function Layout() {
   return (
@@ -13,17 +14,19 @@ export default function Layout() {
       <div className="flex flex-col lg:flex-row mt-2  px-[77px]">
         <Sidebar />
         <main className="flex-1   ">
-        <Outlet/>
+          <Outlet />
         </main>
-        
+
         {/* <div className="bg-white">      
             <ExchangeRatesTable/>
             <GoldSilverRates/>
             </div> */}
-
       </div>
-      <RashifalCard/>
-      <Footer/>
+      <RashifalCard />
+      <div className="mx-[78px]">
+        <Services />
+      </div>
+      <Footer />
     </div>
   );
 }

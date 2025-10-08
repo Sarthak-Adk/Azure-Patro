@@ -55,7 +55,7 @@ const now = new Date();
   ))}
 </nav>
 
-      <div className="text-xs">🔒 Log In</div>
+      <button className="bg-[#E52D49] text-white py-2 px-4 rounded-3xl">Go To App</button>
       </div>
     </header>
     {/* <section className="banner">
