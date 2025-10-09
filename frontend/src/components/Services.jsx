@@ -17,6 +17,7 @@ const services = [
   { icon: <HiCurrencyDollar className="text-[#E52D49] size-8"/>, title: "सुनचाँदी" },
 ];
 
+
 export default function Services() {
   return (
     <>

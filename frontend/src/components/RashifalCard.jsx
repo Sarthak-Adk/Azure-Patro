@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { ChevronRight } from "lucide-react";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+
+// Image imports
 import ariesImg from "../assets/rashifal/aries.jpg";
 import taurusImg from "../assets/rashifal/taurus.jpg";
 import geminiImg from "../assets/rashifal/gemini.jpg";
@@ -14,87 +17,40 @@ import aquariusImg from "../assets/rashifal/aquarius.jpg";
 import piscesImg from "../assets/rashifal/pisces.jpg";
 
 const rashifalData = [
-  {
-    nameNepali: "मेष राशि",
-    nameEnglish: "Aries",
-    img: ariesImg,
-    desc: "आज नयाँ कार्यको सुरुवात गर्न शुभ दिन छ। आत्मविश्वासले सफलता दिलाउनेछ। आज नयाँ कार्यको सुरुवात गर्न शुभ दिन छ। आत्मविश्वासले सफलता दिलाउनेछ।",
-  },
-
-  {
-    nameNepali: "वृष राशि",
-    nameEnglish: "Taurus",
-    img: taurusImg,
-    desc: "कुटुम्बमा खुशी छाउनेछ। व्यापारमा फाइदा र आर्थिक सुधारको संकेत छ। आज नयाँ कार्यको सुरुवात गर्न शुभ दिन छ। आत्मविश्वासले सफलता दिलाउनेछ।",
-  },
-
-  {
-    nameNepali: "मिथुन राशि",
-    nameEnglish: "Gemini",
-    img: geminiImg,
-    desc: "सफलताले हिम्मत दिलाउनेछ। प्रयासका काममा जग बसाउने मौका छ। आज नयाँ कार्यको सुरुवात गर्न शुभ दिन छ। आत्मविश्वासले सफलता दिलाउनेछ।",
-  },
-
-  {
-    nameNepali: "कर्कट राशि",
-    nameEnglish: "Cancer",
-    img: cancerImg,
-    desc: "परिवारमा सुख शान्ति रहनेछ। नयाँ सम्पर्कले फाइदा दिलाउनेछ। आज नयाँ कार्यको सुरुवात गर्न शुभ दिन छ। आत्मविश्वासले सफलता दिलाउनेछ।",
-  },
-  {
-    nameNepali: "सिंह राशि",
-    nameEnglish: "Leo",
-    img: leoImg,
-    desc: "आत्मविश्वास बढ्नेछ। सामाजिक सम्मान प्राप्त हुने सम्भावना छ।",
-  },
-  {
-    nameNepali: "कन्या राशि",
-    nameEnglish: "Virgo",
-    img: virgoImg,
-    desc: "परिश्रमको उचित परिणाम प्राप्त हुनेछ। नयाँ योजना सफल हुनेछ।",
-  },
-  {
-    nameNepali: "तुला राशि",
-    nameEnglish: "Libra",
-    img: libraImg,
-    desc: "मान–प्रतिष्ठा बढ्नेछ। प्रेम र सम्बन्धमा आत्मीयता बढ्नेछ।",
-  },
-  {
-    nameNepali: "वृश्चिक राशि",
-    nameEnglish: "Scorpio",
-    img: scorpioImg,
-    desc: "अध्ययन वा अनुसन्धानमा मन जानेछ। आत्मबल बढ्नेछ।",
-  },
-  {
-    nameNepali: "धनु राशि",
-    nameEnglish: "Sagittarius",
-    img: sagittariusImg,
-    desc: "विदेश वा नयाँ अवसरका लागि समय शुभ छ। यात्राबाट लाभ हुनेछ।",
-  },
-  {
-    nameNepali: "मकर राशि",
-    nameEnglish: "Capricorn",
-    img: capricornImg,
-    desc: "आर्थिक स्थितिमा सुधार आउनेछ। कार्यस्थलमा प्रशंसा पाइनेछ।",
-  },
-  {
-    nameNepali: "कुम्भ राशि",
-    nameEnglish: "Aquarius",
-    img: aquariusImg,
-    desc: "नयाँ मित्रता र सम्बन्धले सहयोग पुर्‍याउनेछ। योजना सफल हुनेछ।",
-  },
-  {
-    nameNepali: "मीन राशि",
-    nameEnglish: "Pisces",
-    img: piscesImg,
-    desc: "धार्मिक कार्यमा मन लाग्नेछ। पारिवारिक सुख र सहयोग प्राप्त हुनेछ।",
-  },
+  { nameNepali: "मेष राशि", nameEnglish: "Aries", img: ariesImg, desc: "आज नयाँ कार्यको सुरुवात गर्न शुभ दिन छ। आत्मविश्वासले सफलता दिलाउनेछ।आज नयाँ कार्यको सुरुवात गर्न शुभ दिन छ। आत्मविश्वासले सफलता दिलाउनेछ।आज नयाँ कार्यको सुरुवात गर्न शुभ दिन छ। आत्मविश्वासले सफलता दिलाउनेछ।" },
+  { nameNepali: "वृष राशि", nameEnglish: "Taurus", img: taurusImg, desc: "कुटुम्बमा खुशी छाउनेछ। व्यापारमा फाइदा र आर्थिक सुधारको संकेत छ। आज नयाँ कार्यको सुरुवात गर्न शुभ दिन छ। आत्मविश्वासले सफलता दिलाउनेछ।" },
+  { nameNepali: "मिथुन राशि", nameEnglish: "Gemini", img: geminiImg, desc: "सफलताले हिम्मत दिलाउनेछ। प्रयासका काममा जग बसाउने मौका छ। आज नयाँ कार्यको सुरुवात गर्न शुभ दिन छ। आत्मविश्वासले सफलता दिलाउनेछ।" },
+  { nameNepali: "कर्कट राशि", nameEnglish: "Cancer", img: cancerImg, desc: "परिवारमा सुख शान्ति रहनेछ। नयाँ सम्पर्कले फाइदा दिलाउनेछ।" },
+  { nameNepali: "सिंह राशि", nameEnglish: "Leo", img: leoImg, desc: "आत्मविश्वास बढ्नेछ। सामाजिक सम्मान प्राप्त हुने सम्भावना छ।" },
+  { nameNepali: "कन्या राशि", nameEnglish: "Virgo", img: virgoImg, desc: "परिश्रमको उचित परिणाम प्राप्त हुनेछ। नयाँ योजना सफल हुनेछ।" },
+  { nameNepali: "तुला राशि", nameEnglish: "Libra", img: libraImg, desc: "मान–प्रतिष्ठा बढ्नेछ। प्रेम र सम्बन्धमा आत्मीयता बढ्नेछ।" },
+  { nameNepali: "वृश्चिक राशि", nameEnglish: "Scorpio", img: scorpioImg, desc: "अध्ययन वा अनुसन्धानमा मन जानेछ। आत्मबल बढ्नेछ।" },
+  { nameNepali: "धनु राशि", nameEnglish: "Sagittarius", img: sagittariusImg, desc: "विदेश वा नयाँ अवसरका लागि समय शुभ छ। यात्राबाट लाभ हुनेछ।आज नयाँ कार्यको सुरुवात गर्न शुभ दिन छ। आत्मविश्वासले सफलता दिलाउनेछ।आज नयाँ कार्यको सुरुवात गर्न शुभ दिन छ। आत्मविश्वासले सफलता दिलाउनेछ।" },
+  { nameNepali: "मकर राशि", nameEnglish: "Capricorn", img: capricornImg, desc: "आर्थिक स्थितिमा सुधार आउनेछ। कार्यस्थलमा प्रशंसा पाइनेछ।" },
+  { nameNepali: "कुम्भ राशि", nameEnglish: "Aquarius", img: aquariusImg, desc: "नयाँ मित्रता र सम्बन्धले सहयोग पुर्‍याउनेछ। योजना सफल हुनेछ।" },
+  { nameNepali: "मीन राशि", nameEnglish: "Pisces", img: piscesImg, desc: "धार्मिक कार्यमा मन लाग्नेछ। पारिवारिक सुख र सहयोग प्राप्त हुनेछ।" },
 ];
 
 export default function RashifalCard() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleNext = () => {
+    if (currentIndex + 3 < rashifalData.length) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
+  const visibleCards = rashifalData.slice(currentIndex, currentIndex + 3);
+
   return (
-    <div className=" mx-[78px] bg-white p-5 rounded-2xl shadow-sm font-[Mukta] mt-4 ">
-      {/* Header Buttons */}
+    <div className="relative mx-[78px] bg-white p-5 rounded-2xl shadow-sm font-[Mukta] mt-4">
+      {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <button className="bg-red-500 text-white text-xl px-4 py-1 rounded-full shadow hover:bg-red-600 transition">
           आजको राशिफल
@@ -104,12 +60,12 @@ export default function RashifalCard() {
         </button>
       </div>
 
-      {/* Horizontal Scroll Container */}
-      <div className="flex gap-5 overflow-x-auto scrollbar-hide">
-        {rashifalData.map((rashi, i) => (
+      {/* Cards */}
+      <div className="flex gap-5">
+        {visibleCards.map((rashi, i) => (
           <div
             key={i}
-            className="max-w-[32%] bg-red-100 rounded-2xl shadow p-4 hover:shadow-lg transition flex-shrink-0"
+            className="w-full max-w-[32%] bg-red-100 rounded-2xl shadow p-4 hover:shadow-lg transition"
           >
             <div className="flex flex-col items-center text-center">
               <img
@@ -123,15 +79,33 @@ export default function RashifalCard() {
               </h2>
             </div>
 
-<div className="bg-white text-sm rounded-xl p-3 text-justify mt-3">
-  <p className="text-red-600 text-sm ">आजको राशिफल:</p>
-            <p className="text-gray-700 ">
-              {rashi.desc}
-            </p>
-<button className="text-red-600 text-sm mt-2 hover:cursor-pointer">सबै पढ्न क्लिक गर्नुहोस्</button>
-           </div>
+            <div className="bg-white text-sm rounded-xl p-3 text-justify mt-3">
+              <p className="text-red-600 text-sm">आजको राशिफल:</p>
+              <p className="text-gray-700 line-clamp-3 h-[56px]">{rashi.desc}</p>
+              <button className="text-red-600 text-sm mt-2 hover:cursor-pointer">
+                सबै पढ्न क्लिक गर्नुहोस्
+              </button>
+            </div>
           </div>
         ))}
+      </div>
+
+      {/* Navigation Buttons */}
+      <div className="flex justify-center gap-4 mt-6">
+        <button
+          onClick={handlePrev}
+          className="text-2xl bg-gray-100 hover:bg-gray-200 rounded-full p-2 transition disabled:opacity-30"
+          disabled={currentIndex === 0}
+        >
+          <IoIosArrowBack />
+        </button>
+        <button
+          onClick={handleNext}
+          className="text-2xl bg-gray-100 hover:bg-gray-200 rounded-full p-2 transition disabled:opacity-30"
+          disabled={currentIndex + 3 >= rashifalData.length}
+        >
+          <IoIosArrowForward />
+        </button>
       </div>
     </div>
   );

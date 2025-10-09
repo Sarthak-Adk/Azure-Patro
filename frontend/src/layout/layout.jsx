@@ -6,12 +6,13 @@ import GoldSilverRates from "../components/GoldSilverRates";
 import Footer from "../components/Footer";
 import RashifalCard from "../components/RashifalCard";
 import Services from "../components/Services";
+import MantraCard from "../components/MantraCard";
 
 export default function Layout() {
   return (
     <div className="bg-gray-100 min-h-screen font-sans">
       <Header />
-      <div className="flex flex-col lg:flex-row mt-2  px-[77px]">
+      <div className="flex flex-col lg:flex-row mt-2  lg:px-[77px]">
         <Sidebar />
         <main className="flex-1   ">
           <Outlet />
@@ -23,8 +24,11 @@ export default function Layout() {
             </div> */}
       </div>
       <RashifalCard />
-      <div className="mx-[78px]">
+      <div className="lg:mx-[78px]">
         <Services />
+      </div>
+      <div >
+        <MantraCard />
       </div>
       <Footer />
     </div>
