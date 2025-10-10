@@ -1,17 +1,23 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Home  from "./Pages/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import Layout from "./layout/layout";
+import Home from "./pages/Home";
+import Rashifal from "./pages/Rashifal";
+import MantraPage from "./pages/MantraPage";
 import CalendarPage from "./pages/CalendarPage";
+import TestPage from "./pages/TestPage";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />  
       <Routes>
-        {/* Parent route with Layout */}
         <Route path="/" element={<Layout />}>
-          {/* Nested routes go inside Layout's <Outlet /> */}
-          <Route index element={<Home/>} />
+          <Route index element={<Home />} />
           <Route path="calendar" element={<CalendarPage />} />
+          <Route path="rashifal/*" element={<Rashifal />} />
+            <Route path="mantra" element={<MantraPage />} />
+         
         </Route>
       </Routes>
     </BrowserRouter>

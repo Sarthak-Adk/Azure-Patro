@@ -21,7 +21,7 @@ const services = [
 export default function Services() {
   return (
     <>
-    <div className="bg-white p-6 rounded-xl shadow-md w-full mt-3 ">
+    <div className="bg-white p-6 rounded-xl  w-full ">
       {/* Section Header */}
 
         <h2 className="text-3xl font-semibold text-gray-800 mb-3 text-center">
@@ -29,7 +29,7 @@ export default function Services() {
         </h2>
 
       {/* Grid of Cards */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-4  lg:mx-[77px]">
         {services.map((service, index) => (
           <div
             key={index}

@@ -10,3 +10,6 @@
   font-style: normal;
 }
 
+.bg-color{
+ background: linear-gradient(rgb(255, 183, 183), rgb(255, 244, 244));
+}
