@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Rashifal from "./pages/Rashifal";
 import MantraPage from "./pages/MantraPage";
 import CalendarPage from "./pages/CalendarPage";
-import TestPage from "./pages/TestPage";
+import NewsPage from "./pages/NewsPage";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
           <Route path="calendar" element={<CalendarPage />} />
           <Route path="rashifal/*" element={<Rashifal />} />
             <Route path="mantra" element={<MantraPage />} />
-         
+          <Route path="news" element={<NewsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

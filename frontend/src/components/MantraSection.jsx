@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FestivalCard({ image, heading, subheading, title, views, duration }) {
+export default function MantraCard({ image, heading, subheading, title, views, duration }) {
   return (
     <div className="max-w-sm bg-white rounded-2xl shadow-md overflow-hidden w-[300px]">
       <div className="relative">

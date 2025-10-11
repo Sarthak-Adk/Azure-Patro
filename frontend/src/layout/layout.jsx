@@ -12,15 +12,16 @@ export default function Layout() {
   const location = useLocation();
   const path = location.pathname;
 
-  const isRashifalPage = path.startsWith("/rashifal");
-  const isMantraPage = path.startsWith("/mantra");
+  // ✅ Unified layout check for simple pages
+  const simplePages = ["/rashifal", "/mantra", "/news"];
+  const isSimplePage = simplePages.some((page) => path.startsWith(page));
 
-  // Rashifal page layout
-  if (isRashifalPage) {
+  // ✅ Simple Layout (Rashifal, Mantra, News)
+  if (isSimplePage) {
     return (
       <div className="bg-gray-100 min-h-screen font-sans">
         <Header />
-        <main className="flex-1 lg:px-[77px] md:px-[10px]  mt-6">
+        <main className="flex-1 px-4 sm:px-8 lg:px-20 mt-6">
           <Outlet />
         </main>
         <Footer />
@@ -28,40 +29,22 @@ export default function Layout() {
     );
   }
 
-  // Mantra page layout
-  if (isMantraPage) {
-    return (
-      <div className="bg-gray-100 min-h-screen font-sans">
-        <Header />
-        <main className="flex-1 lg:px-[77px] md:px-[10px]  mt-6">
-          <Outlet />
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
-  // Default layout (Home, Calendar, etc.)
+  // ✅ Default Layout (Home, Calendar, etc.)
   return (
     <div className="bg-gray-100 min-h-screen font-sans">
       <Header />
-      <div className="flex flex-col lg:flex-row mt-2 lg:px-[77px]">
+      <div className="flex flex-col lg:flex-row mt-2 px-4 sm:px-8 lg:px-20">
         <Sidebar />
-        <main className="flex-1 overflow-auto lg:px-[77px] md:px-[10px] ">
+        <main className="flex-1 overflow-auto mt-4 lg:mt-0 lg:pl-8">
           <Outlet />
         </main>
-        {/* Optional right widgets */}
-        {/* <div className="hidden lg:flex flex-col gap-4 ml-6 w-80">
-          <ExchangeRatesTable />
-          <GoldSilverRates />
-        </div> */}
       </div>
 
-      {/* Only show these components on default layout */}
+      {/* Optional Components for Default Layout */}
       <RashifalCard />
       <Services />
       <MantraCard />
-      
+
       <Footer />
     </div>
   );
