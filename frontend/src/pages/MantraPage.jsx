@@ -93,9 +93,12 @@ const MantraPage = () => {
           />
         ))}
       </div>
-      <button className="cursor-pointer">
+      <div className="flex justify-center">
+      <button className="cursor-pointer  bg-red-500 text-white font-bold py-2 px-6 mt-3 shadow-lg transition
+       duration-300 ease-in-out text-lg tracking-wider mb-6 rounded-2xl" onClick={() => setViewAllClicked(!viewAllClicked)}>
         {viewAllClicked? <span onClick={() => setViewAllClicked(false)}>View Less</span>:<span onClick={() => setViewAllClicked(true)}>View More</span>}
       </button>
+      </div>
     </>
   );
 };

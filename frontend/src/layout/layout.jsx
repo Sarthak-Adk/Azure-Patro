@@ -20,7 +20,7 @@ export default function Layout() {
     return (
       <div className="bg-gray-100 min-h-screen font-sans">
         <Header />
-        <main className="flex-1 lg:px-[77px] md:px-[10px] px-5 mt-6">
+        <main className="flex-1 lg:px-[77px] md:px-[10px]  mt-6">
           <Outlet />
         </main>
         <Footer />
@@ -33,7 +33,7 @@ export default function Layout() {
     return (
       <div className="bg-gray-100 min-h-screen font-sans">
         <Header />
-        <main className="flex-1 lg:px-[77px] md:px-[10px] px-5 mt-6">
+        <main className="flex-1 lg:px-[77px] md:px-[10px]  mt-6">
           <Outlet />
         </main>
         <Footer />
@@ -47,7 +47,7 @@ export default function Layout() {
       <Header />
       <div className="flex flex-col lg:flex-row mt-2 lg:px-[77px]">
         <Sidebar />
-        <main className="flex-1 overflow-auto lg:px-[77px] md:px-[10px] px-5">
+        <main className="flex-1 overflow-auto lg:px-[77px] md:px-[10px] ">
           <Outlet />
         </main>
         {/* Optional right widgets */}

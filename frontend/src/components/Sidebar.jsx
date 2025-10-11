@@ -42,7 +42,7 @@ export default function Sidebar() {
     // },
   ];
   return (
-    <aside className="w-full lg:w-[420px] bg-white rounded-2xl shadow p-4 mr-3">
+    <aside className="w-full lg:w-[420px] bg-white lg:rounded-2xl  shadow p-4 mr-3">
       {/* Date Box */}
       <div
         className="max-w-md mx-auto rounded-xl shadow-md overflow-hidden flex items-center p-4 text-sm mb-4"

@@ -29,7 +29,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="relative w-auto h-[400px] sm:h-[500px] md:h-[550px] lg:h-[600px] overflow-hidden rounded-2xl">
+    <div className="relative w-auto h-[400px] sm:h-[400px] md:h-[550px] lg:h-[600px] overflow-hidden lg:rounded-2xl">
       <img
         src={SilderImg[currentIndex]}
         alt="Slider"
