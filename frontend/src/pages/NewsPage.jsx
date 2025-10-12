@@ -33,7 +33,7 @@ export default function NewsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 p-2 sm:p-4 lg:p-6 flex flex-col lg:flex-row gap-4 sm:gap-6">
+    <div className="min-h-screen  p-2 sm:p-4 lg:p-6 flex flex-col lg:flex-row gap-4 sm:gap-6">
       {/* --- Left Section: Main News --- */}
       <div className="flex-1">
         {/* Title */}
