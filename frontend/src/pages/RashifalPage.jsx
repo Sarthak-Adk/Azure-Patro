@@ -89,7 +89,7 @@ export default function Rashifal() {
 
   
   return (
-    <div className="min-h-screen p-2 sm:p-4 lg:p-6 flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-6">
+    <div className="min-h-screen  p-2 sm:p-4 lg:p-6 flex flex-col lg:flex-row gap-4 sm:gap-6 lg:gap-6">
       {/* Left Section */}
       <div className="flex-1">
         <h1 className="text-2xl sm:text-3xl font-bold text-red-600 mb-1 sm:mb-2">
