@@ -1,42 +1,50 @@
-import React from "react";
-import newsImg from "../assets/news.jpg"; // main sample news image
-import newsThumb from "../assets/news.jpg"; // thumbnail image for smaller news
+import React, { useState } from "react";
+import newsImg from "../assets/news.jpg";
+import newsThumb from "../assets/news.jpg";
+import { Link } from "react-router-dom";
 
 export default function NewsPage() {
-  const topNews = {
+  // Initialize state
+  const [topNews, setTopNews] = useState({
     title: "Government Declares Ilam a Disaster Crisis Zone",
     image: newsImg,
-    content: `Kathmandu, Oct 9 — The government has declared Ilam district a disaster crisis zone after heavy landslides and floods caused severe damage. 
-    Authorities are mobilizing emergency resources and rescue teams to affected regions. Local residents are being relocated to safer areas as 
-    the risk of further landslides continues.`,
-  };
+    content: `Kathmandu, Oct 9 — The government has declared Ilam district a disaster crisis zone after heavy landslides and floods caused severe damage. Authorities are mobilizing emergency resources and rescue teams to affected regions. Local residents are being relocated to safer areas as the risk of further landslides continues.`,
+  });
 
-  const moreNews = [
+  const [moreNews, setMoreNews] = useState([
     {
       title: "Prime Minister to Visit Flood-Hit Areas Tomorrow",
       image: newsThumb,
-      content:
-        "PM will head to eastern Nepal to inspect flood damage and meet displaced families. Relief funds to be distributed soon.",
+      content: "PM will head to eastern Nepal to inspect flood damage and meet displaced families. Relief funds to be distributed soon.",
     },
     {
       title: "Nepal's Gold Reserves Reach Record High",
       image: newsThumb,
-      content:
-        "The Nepal Rastra Bank reported that the country's gold reserves have reached a historic milestone this quarter.",
+      content: "The Nepal Rastra Bank reported that the country's gold reserves have reached a historic milestone this quarter.",
     },
     {
       title: "Major Road Expansion Project Launched in Kathmandu",
       image: newsThumb,
-      content:
-        "The government announced the start of a new 4-lane road project expected to ease congestion in the capital city.",
+      content: "The government announced the start of a new 4-lane road project expected to ease congestion in the capital city.",
     },
-  ];
+  ]);
+
+  // Swap function
+  const handleSwap = (index) => {
+    const clickedNews = moreNews[index];
+
+    // Swap topNews with clicked news
+    const newMoreNews = [...moreNews];
+    newMoreNews[index] = topNews; // move current top news to moreNews
+
+    setTopNews(clickedNews);
+    setMoreNews(newMoreNews);
+  };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-2 sm:p-4 lg:p-6 flex flex-col lg:flex-row gap-4 sm:gap-6">
+    <div className="min-h-screen  p-2 sm:p-4 lg:p-6 flex flex-col lg:flex-row gap-4 sm:gap-6">
       {/* --- Left Section: Main News --- */}
       <div className="flex-1">
-        {/* Title */}
         <h1 className="text-2xl sm:text-3xl font-bold text-red-600 mb-3">
           आजको समाचार - Today's News
         </h1>
@@ -55,6 +63,9 @@ export default function NewsPage() {
             <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
               {topNews.content}
             </p>
+            <button className="mt-4 bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition">
+              Read More
+            </button>
           </div>
         </div>
 
@@ -63,7 +74,8 @@ export default function NewsPage() {
           {moreNews.map((item, index) => (
             <div
               key={index}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 bg-white shadow-md rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition"
+              onClick={() => handleSwap(index)}
+              className="cursor-pointer flex flex-col sm:flex-row gap-3 sm:gap-4 bg-white shadow-md rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition"
             >
               <img
                 src={item.image}
@@ -83,7 +95,7 @@ export default function NewsPage() {
         </div>
       </div>
 
-      {/* --- Right Sidebar: Latest News --- */}
+         {/* --- Right Sidebar: Latest News --- */}
       <aside className="w-full lg:w-1/3 bg-white p-3 sm:p-5 shadow-md rounded-xl border border-gray-200 lg:sticky lg:top-4 self-start">
         <h3 className="text-base sm:text-lg font-bold text-gray-700 mb-3">
           LATEST NEWS
@@ -108,7 +120,10 @@ export default function NewsPage() {
 
           {/* Smaller News List */}
           {[...Array(3)].map((_, i) => (
-            <div key={i} className="flex items-center gap-2 sm:gap-3 mt-2 sm:mt-4">
+            <div
+              key={i}
+              className="flex items-center gap-2 sm:gap-3 mt-2 sm:mt-4"
+            >
               <img
                 src={newsThumb}
                 alt="News Thumbnail"

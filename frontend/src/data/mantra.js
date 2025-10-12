@@ -11,7 +11,7 @@ const mantraData = [
     title: "गणेश वन्दना मन्त्र",
     views: "5K",
     duration: "1 Min",
-    image: event1
+    image: event4
   },
   {
     id: 2,
@@ -47,7 +47,7 @@ const mantraData = [
     title: "सरस्वती वन्दना मन्त्र",
     views: "4.2K",
     duration: "1 Min",
-    image: event1,
+    image: event2,
   },
   {
     id: 6,
@@ -58,15 +58,7 @@ const mantraData = [
     duration: "3 Min",
     image: event2,
   },
-   {
-    id: 7,
-    heading: "Saraswati Puja",
-    subheading: "Happy",
-    title: "सरस्वती वन्दना मन्त्र",
-    views: "4.2K",
-    duration: "1 Min",
-    image: event1,
-  },
+
   {
     id: 8,
     heading: "Hanuman Jayanti",
@@ -83,7 +75,7 @@ const mantraData = [
     title: "सरस्वती वन्दना मन्त्र",
     views: "4.2K",
     duration: "1 Min",
-    image: event1,
+    image: event4,
   },
   {
     id: 10,

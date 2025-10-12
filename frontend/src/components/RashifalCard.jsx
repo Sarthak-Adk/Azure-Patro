@@ -78,12 +78,12 @@ export default function RashifalCard() {
 </div>
 
       {/* Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:mx-[77px]">
+      <div className="  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:mx-[77px]">
         {visibleCards.map((rashi, i) => (
           <Link
             to={rashi.link}
             key={i}
-            className="bg-color cursor-pointer rounded-2xl shadow p-4 hover:shadow-lg transition no-underline flex flex-col"
+            className="bg-gray-100 cursor-pointer rounded-2xl shadow p-4 hover:shadow-lg transition no-underline flex flex-col"
           >
             <div className="flex flex-col items-center text-center">
               <img
