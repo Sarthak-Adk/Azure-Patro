@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink,Link } from "react-router-dom";
 import { FaFacebookF, FaInstagram, FaLinkedin, FaGlobe } from "react-icons/fa";
 import { HiMenu, HiX } from "react-icons/hi";
 import headerbanner from "../assets/headerbanner.png";
@@ -10,12 +10,9 @@ export default function Header() {
 
   const links = [
     { name: "Calendar", path: "/calendar" },
-    { name: "Horoscope", path: "/rashifal" },
+    { name: "Rashifal", path: "/rashifal" },
     { name: "News", path: "/news" },
-    { name: "Radios", path: "/radios" },
-    { name: "Gold & Silver", path: "/gold-silver" },
-    { name: "More", path: "/more" },
-  ];
+];
 
   const now = new Date();
   const date = now.toLocaleDateString();
@@ -56,7 +53,7 @@ export default function Header() {
               key={i}
               to={link.path}
               className={({ isActive }) =>
-                `px-3 py-1 rounded-3xl hover:bg-red-100 ${
+                `px-3 py-1 rounded-3xl hover:bg-red-500 hover:text-white ${
                   isActive
                     ? "text-white font-bold bg-[#E52D49]"
                     : "text-gray-800"
@@ -68,9 +65,9 @@ export default function Header() {
           ))}
         </nav>
 
-        <button className="hidden lg:block bg-[#E52D49] text-white py-2 px-4 rounded-3xl hover:bg-red-600 transition">
+       <Link to=""> <button className="hidden lg:block bg-[#E52D49] text-white py-2 px-4 rounded-3xl hover:bg-red-600 transition">
           Go To App
-        </button>
+        </button></Link>
 
         {/* Mobile Menu Button */}
         <button

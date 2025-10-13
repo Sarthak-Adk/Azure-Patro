@@ -7,14 +7,15 @@ import { BsStars } from "react-icons/bs";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { HiCurrencyDollar } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const services = [
-  { icon: <MdTempleHindu className="text-[#E52D49] text-2xl"/>, title: "पूजा विधि" },
-  { icon: <FaCalendar className="text-[#E52D49] text-2xl"/>, title: "पात्रो" },
-  { icon: <BsStars className="text-[#E52D49] text-2xl"/>, title: "राशिफल" },
-  { icon: <FaArrowRightArrowLeft className="text-[#E52D49] text-2xl"/>, title: "मिति परिवर्तन" },
-  { icon: <FaArrowTrendUp className="text-[#E52D49] text-2xl"/>, title: "शेयर बजार" },
-  { icon: <HiCurrencyDollar className="text-[#E52D49] text-2xl"/>, title: "सुनचाँदी" },
+  { icon: <MdTempleHindu className="text-[#E52D49] text-2xl"/>, title: "पूजा विधि", path: "/puja" },
+  { icon: <FaCalendar className="text-[#E52D49] text-2xl"/>, title: "पात्रो", path: "/calendar" },
+  { icon: <BsStars className="text-[#E52D49] text-2xl"/>, title: "राशिफल", path: "/rashifal" },
+  { icon: <FaArrowRightArrowLeft className="text-[#E52D49] text-2xl"/>, title: "मिति परिवर्तन", path: "/date-converter" },
+  { icon: <FaArrowTrendUp className="text-[#E52D49] text-2xl"/>, title: "शेयर बजार", path: "/share-bazar" },
+  { icon: <HiCurrencyDollar className="text-[#E52D49] text-2xl"/>, title: "सुनचाँदी", path: "/gold-silver" },
 ];
 
 export default function Services() {
@@ -32,7 +33,8 @@ export default function Services() {
       {/* Grid of Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:mx-[77px]">
         {services.map((service, index) => (
-          <div
+          <Link to={service.path} key={index}>
+         <div
             key={index}
             className="flex flex-col items-center justify-center hover:cursor-pointer bg-gray-100 rounded-xl p-4 hover:shadow-md transition"
           >
@@ -41,6 +43,7 @@ export default function Services() {
             </div>
             <p className="text-sm font-medium text-gray-700 text-center">{service.title}</p>
           </div>
+          </Link>
         ))}
       </div>
     </div>

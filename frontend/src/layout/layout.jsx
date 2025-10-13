@@ -3,7 +3,6 @@ import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import ExchangeRatesTable from "../components/ExchangeRateTable";
-import GoldSilverRates from "../components/GoldSilverRates";
 import RashifalCard from "../components/RashifalCard";
 import Services from "../components/Services";
 import MantraCard from "../components/MantraCard";

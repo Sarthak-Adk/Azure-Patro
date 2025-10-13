@@ -18,7 +18,7 @@ function App() {
           <Route path="rashifal/*" element={<Rashifal />} />
             <Route path="mantra" element={<MantraPage />} />
           <Route path="news" element={<NewsPage />} />
-        </Route>
+          </Route>
       </Routes>
     </BrowserRouter>
   );
