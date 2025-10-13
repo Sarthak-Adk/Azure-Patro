@@ -49,7 +49,7 @@ const MantraPage = () => {
   return (
     <>
       {/* --- Hero Section --- */}
-      <div className=" py-12 px-4 sm:px-6 lg:px-8">
+      <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* --- Left Section: Text --- */}
           <div className="lg:pr-16">
@@ -64,7 +64,7 @@ const MantraPage = () => {
                 </p>
 
                 <p
-                  className={`text-gray-600 text-base leading-relaxed mb-3 whitespace-pre-line transition-all duration-300 ${
+                  className={`text-gray-900 text-base font-bold leading-relaxed mb-3 whitespace-pre-line transition-all duration-300 ${
                     showFullText ? "" : "line-clamp-12"
                   }`}
                 >
@@ -97,7 +97,7 @@ const MantraPage = () => {
       </div>
 
       {/* --- Cards Section --- */}
-      <div className="flex flex-wrap justify-center gap-6 py-6 bg-white">
+      <div className="flex flex-wrap justify-center gap-6 py-6 ">
         {filteredMantras.map((item) => (
           <MantraSection
             key={item.id}
@@ -109,9 +109,7 @@ const MantraPage = () => {
             duration={item.duration}
           />
         ))}
-      </div>
-
-      {/* --- View More / View Less Button --- */}
+          {/* --- View More / View Less Button --- */}
       <div className="flex justify-center">
         <button
           className="cursor-pointer bg-red-500 text-white font-bold py-2 px-6 mt-3 shadow-lg transition duration-300 ease-in-out text-lg tracking-wider mb-6 rounded-2xl"
@@ -120,6 +118,9 @@ const MantraPage = () => {
           {visibleCount < mantraData.length ? "View More" : "View Less"}
         </button>
       </div>
+      </div>
+
+    
     </>
   );
 };

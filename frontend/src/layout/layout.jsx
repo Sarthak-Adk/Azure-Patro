@@ -43,7 +43,6 @@ export default function Layout() {
       <RashifalCard />
       <Services />
       <MantraCard />
-
       <Footer />
     </div>
   );
